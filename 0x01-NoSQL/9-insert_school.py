@@ -3,13 +3,14 @@
 function that inserts a new document in a collection
 based on kwargs
 """
-from pymongo.collection import Collection
 
 
-def insert_school(mongo_collection: Collection, **kwargs):
+def insert_school(mongo_collection, **kwargs):
     """
     Args:
-        mongo_collection (Collection): _description_
+        mongo_collection (Collection):
+    Returns:
+        list
     """
     result = mongo_collection.insert_one(kwargs)
     return result.inserted_id
